@@ -1,5 +1,7 @@
 \part{Ayudantia 2}
 
+\section{Parte 1}
+
 Si tenemos un caso donde conocemos 2 puntos a alturas distinta:
 
 \begin{figure}[H]
@@ -60,3 +62,28 @@ Lo mismo es nesesario hacer con P2.
 \\ \\
 Luego, como en este caso hay 2 puntos, hay que sacar el promedio de $q_v$ y Pa, obteniendo asi $\Delta m_p$.  
 
+\section{parte 2}
+
+Podemos obtener la vida util a partil de la seguridad:
+
+\begin{equation}
+    S = (1 - \frac{1}{T})^n
+\end{equation}
+
+Se define Gumbell como:
+
+\begin{equation}
+    X_T = \mu + K_t \cdot \sigma
+\end{equation}
+
+\begin{equation}
+    K_t = \frac{y_t - y_n}{\sigma_n}
+\end{equation}
+
+\begin{equation}
+    y_t = -\ln(\ln(\frac{T}{T-1}))
+\end{equation}
+
+Los valores n deben ser entregados.
+\\ \\
+La probabilidad de que la estructura falle mas de \textbf{X} veces es:
