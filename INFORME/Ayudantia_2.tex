@@ -62,13 +62,15 @@ Lo mismo es nesesario hacer con P2.
 \\ \\
 Luego, como en este caso hay 2 puntos, hay que sacar el promedio de $q_v$ y Pa, obteniendo asi $\Delta m_p$.  
 
-\section{parte 2}
+\section{Parte 2}
 
 Podemos obtener la vida util a partil de la seguridad:
 
 \begin{equation}
     S = (1 - \frac{1}{T})^n
 \end{equation}
+
+\subsection{Gumbell}
 
 Se define Gumbell como:
 
@@ -87,3 +89,55 @@ Se define Gumbell como:
 Los valores n deben ser entregados.
 \\ \\
 La probabilidad de que la estructura falle mas de \textbf{X} veces es:
+
+\begin{equation}
+    P(X_{fallas}) = 1 - P(0) + P(1) + P(2) + ... + P(X-1)
+\end{equation}
+
+Aplicando la distribucion de bernoulli:
+
+\begin{equation}
+    P(k) = \binom{n}{k} \cdot P^k \cdot (1-P)^{n-k}
+\end{equation}
+
+Donde \textbf{k es el numero de fallas} y \textbf{P las probabilidades de excedencia}.
+
+\subsection{Log Pearson III}
+
+Se define como:
+
+\begin{equation}
+    X_T = \mu + K_t \cdot \sigma
+\end{equation}
+
+\begin{equation}
+    K_t = Z + (Z^2 - 1)K + \frac{1}{3}(Z^3 - 6Z)K^2 - (Z^2-1)Z^3 + Z\cdot K^4 + \frac{K^5}{3}
+\end{equation}
+
+\begin{equation}
+    K = \frac{CS}{6}
+\end{equation}
+
+Donde CS es el coeficiente de simetria.
+\\ \\
+Z se calcula de acuerdo a la distribucion normal:
+
+\begin{equation}
+    Z = W -  \frac{2.516 + 0.803W + 0.0103W^2}{1 + 1.432W + 0.189W^2 + 0.001308W^3}
+\end{equation}
+
+\begin{equation}
+    W = (\ln(\frac{1}{P^2}))^{0.5}
+\end{equation}
+
+\begin{equation}
+    P = \frac{1}{T}
+\end{equation}
+
+\subsection{Caudal de Diseño}
+
+Luego usando las distintas distribuciones, se define el caudal de diseño como:
+
+\begin{equation}
+    Q_{diseño} = \exp(X_T)
+\end{equation}
