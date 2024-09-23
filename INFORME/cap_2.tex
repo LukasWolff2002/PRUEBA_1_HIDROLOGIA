@@ -1,0 +1,124 @@
+\part{Capítulo 2}
+\section{Ciclo hidrológico}
+\begin{itemize}
+    \item Idealización del movimiento, distribución y circulación del agua en la Tierra, entre la atmásofera-litosfera-hidrósfera y nuevamente a la atmósfera.
+    \item Es un sistema complejo
+    \item \textbf{Abstracción}: se considera sólo aquellos elementos del ciclo que son posibles de cuantificar
+    \item Precipitación, radicación solar y gravedad $\rightarrow$ \textbf{Procesos del ciclo de escorrentía} $\rightarrow$ Evaporación y evotranspiración, escorrentía superficial y escorrentía subterránea.
+\end{itemize}
+
+\section{Sistema hidrológico}
+Se define como una estructura o volumen en el espacio, rodeada por una frontera, que acepta agua (lluvia), opera en ellas internamente y las produce ccomo salida (caudal).
+
+\begin{itemize}
+    \item \textbf{Estructura}: Son los "caminos" del flujo a través de los cuales el agua puede pasar como materia prima desde el punto que entre hasta el punto en que sale.
+    \item \textbf{Frontera}: Es una superficie continua definida en 3D, en que encierra el volumen o estructura
+\end{itemize}
+
+\subsection{Cuenca u hoya hidrográfica}
+Es una superficie de terreno que drena hacia una corriente en un lugar determinado. La \textbf{divisoria de cuencas} es la línea que separa la superficie de la tierra cuyo drenaje fluye hacia un río dado de las superficies de la tierra cuyos desagües corren hacia otros ríos.
+
+La frontera del sistema se dibuja alrededor de la cuenca proyectando la divisoria de aguas verticalmente hacia, y abajo hacia planos horizontales.
+
+\subsubsection{Características geomorfológicas de una cuenca}
+\begin{itemize}
+    \item Área aportante o superficie (A)
+    \begin{itemize}
+        \item Corresponde a la proyección en un plano horizontal de la cuenca
+    \end{itemize}
+    \item Perímetro
+    \begin{itemize}
+        \item Corresponde a la longitud perimetral de la línea divisoria proyectada
+    \end{itemize}
+    \item Longitud del cauce principal ($L_c$)
+    \begin{itemize}
+        \item Corresponde a la medición directa de  la longitud del cuace principal de la cuenca a lo largo de su trayectoria
+    \end{itemize}
+    \item Longitud del cauce desde centro de gravedad del la cuenca ($L_G$)
+    \begin{itemize}
+        \item Es la longitud desde el centro de gravedad hasta el punto de salida (Punto control). Una vez indentificado el centroide geométrico se procede a medir la lonfitud del recorrido de una partícula imaginaria de agua, desde este punto hasta la salida de la cuenca.
+        \item Centroide geométrico(Cg)
+        \begin{itemize}
+            \item Centro de gravedad del área de drenaje
+        \end{itemize}
+    \end{itemize}
+    \item Altitud media ($Hm$)
+    \begin{itemize}
+        \item Corresponde al promedio simple entre la mayor y menor altura del cauce principal.
+    \end{itemize}
+    \item Pendidente media de la cuenca (S)
+    \begin{itemize}
+        \item Este parámetro caracteriza en gran parte la  velocidad con que se da la escorrentía superficial afectando el tiempo que lleva el agua de la lluvia para concentrarse en los lechos fluviales que constituyen la red de drenaje de las cuencas.
+        \begin{equation}
+            S = \frac{\Delta H}{A} \cdot (\frac{l_o}{2} + \sum L_i + \frac{l_n}{2})
+        \end{equation}
+        \begin{itemize}
+            \item $\Delta H$: Desnivel entre curvas de nivel adyacentes, en (m)
+            \item $A$: Área de la cuencia en ($m^2$)
+            \item $l_o$: Longitud del cauce principal
+            \item $L_i$: Longitud de la curva de nivel i
+            \item $n$: Número toral de curvas de nivel consideradas
+        \end{itemize}
+    \end{itemize}
+    \item Pendiente media del cauce principal (i)
+    \begin{itemize}
+        \item Diferencia total entre la cotras del lecho del río, divido por la longitud entre esos dos puntos.
+        \begin{equation}
+            Y = \frac{Z_{max}-Z_{min}}{L}
+        \end{equation}
+    \end{itemize}
+    \item Curva hipsométrica
+    \begin{itemize}
+        \item Curva que representa las superficies dominadas por encima de cada curva de nivel y, por lo tanto, caracteriza al relieve de la cuenca.
+    \end{itemize}
+\end{itemize}
+
+\section{Balance hidrológico}   
+Se basa en la aplicación detallada de la ecuación general de balance de masa, sobre una porción de superficie.
+
+\begin{equation}
+    \frac{dS}{dt} = X_{Entrada} - Y_{Salida}
+\end{equation}
+
+Ecuación general:
+\begin{equation}
+    P + Q_{SA} + Q_{ZA} - (E + ET + Int + Q_{SE} + Q_{ZE}) = \Delta S_L + \Delta S_S + \Delta S_Z + \Delta S_N
+\end{equation}
+
+\textbf{Todo esto está en la ayudantía 1}
+
+\subsection{Fórmula de Turc}
+\begin{equation}
+    D = \frac{P}{\sqrt{0.9+(\frac{P}{L})^2}}
+\end{equation}
+Donde:
+\begin{itemize}
+    \item D: Profundidad de la lluvia en mm, es equivalente a ET
+    \item P: Precipitación en mm
+    \item $L= 300 +25T +0.05T^3$
+    \item T en °C
+\end{itemize}
+
+\section{Isolineas de temperatura media anual}
+
+\section{Criterios elección modelos}
+\begin{itemize}
+    \item \textbf{Respuesta a modos globales de variablidad climática}: Se buscó aquellos modelos que representaban adecuadamente fenómenos interanuales como la influencia de El niño Oscilación del Sur y el Modo Anular del Hemisferio Sur, debido a su influencia en la variablilidad de precipitación en Chile.
+    \item \textbf{Sensibilidad climática}: Condición del modelo que hace alusión a la respuesta global del sistema climático a una cierta forzante externa
+    \item \textbf{Cambios regionales}: Los cambios proyectados de temperatura y precipitación fueron evaluados para cada modelo. Se seleccionó un conjunto de modelos con impactos diversos
+\end{itemize}
+
+\subsection{Criterios escalamiento}
+\begin{itemize}
+    \item Los enfoques de escalamiento estadístico se basan en el supuesto de establecer relaciones estadísticas entre la información de los GCM y los datos observados, tanto entre ellos como entre los distintos periodos de tiempo a analizar
+    \item Escalamiento lineal
+    \begin{itemize}
+        \item Corrige el modelo por la relación entre las medias de los modelos y de los registros observados
+    \end{itemize}
+    \item Quantile Delta Mapping (QDM)
+    \item 
+\end{itemize}
+
+
+
+
