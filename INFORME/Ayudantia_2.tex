@@ -102,6 +102,10 @@ Aplicando la distribucion de bernoulli:
 
 Donde \textbf{k es el numero de fallas} y \textbf{P las probabilidades de excedencia}.
 
+\begin{equation}
+    \binom{n}{k} = \frac{n!}{k!(n-k)!}
+\end{equation}
+
 \subsection{Log Pearson III}
 
 Se define como:
@@ -139,5 +143,21 @@ Z se calcula de acuerdo a la distribucion normal:
 Luego usando las distintas distribuciones, se define el caudal de diseño como:
 
 \begin{equation}
-    Q_{diseño} = \exp(X_T)
+    Q_{diseno} = \exp(X_T)
 \end{equation}
+
+\subsection{Intervalos de Confianza}
+
+Se define como:
+
+\begin{equation}
+    X_t + - S_e \cdot Z_{\alpha}
+\end{equation}
+
+\textbf{$Z_{\alpha}$} es la variable normal estandar para un nivel de confianza de $\alpha$. Para $\alpha$ = 5 \%, implica que $Z_{\alpha}$ = 1.96. = 1.645. Luego:
+
+\begin{equation}
+    S_e = \sqrt{(1+1.139K_t + 1.1000K_t^2) \cdot \frac{1}{n}}
+\end{equation}
+
+De esta forma, obtenemos los 2 limites del intervalo de confianza.
