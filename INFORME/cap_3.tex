@@ -243,5 +243,105 @@ Los frentes fríos ocurren cuando una masa de aire frío avanza sobre una masa d
 \\\\
 Frente Ocluido: cuando un frente frío alcanza a un frente cálido, el aire frío se desplaza por debajo del aire cálido, formando un frente ocluido. Las precipitaciones son intensas y cubren áreas pequeñas.
 
+\subsection{Estabilidad Atmosférica}
+
+\begin{itemize}
+    \item Gradiente termico normal: $\gamma = -6,5 \, \text{(°C/km)}$
+    \item Gradiente adiabático seco: $\Gamma_d = 9,8 \, \text{(°C/km)}$ Gas ideal y seco
+    \item Graduente pseudo adiabático y humedo: $\Gamma_s$
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{imagenes/grad.png}
+        \label{fig:gradiente}
+    \end{figure}
+\end{itemize}
+
+La diferencia entre los gradientes tiene grandes implicancias en la estabilidad.
+\\\\
+Para que una masa de aire sea absolutamente estable, su gradiente de temperatura debe ser menor que el gradiente adiabático correspondiente: seco para aire seco y húmedo para aire saturado.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagenes/estabilidad.png}
+    \label{fig:estabilidad}
+\end{figure}
+
+\section{Propiedades del vapor de agua}
+
+Según la Ley de Dalton, la presión de vapor es la ejercida solo por el vapor de agua. La presión total de la atmósfera es la suma de la presión del aire seco y la del vapor de agua.
+
+\begin{equation}
+    e = \rho_v \cdot R_v \cdot T
+\end{equation}
+
+Donde:
+\begin{itemize}
+    \item $e = $ presión de vapor de agua (Pa)
+    \item $\rho_v = $ densidad del vapor de agua (gr/m³)
+    \item $R_v = $ constante de los gases para vapor de agua (J/kg K)
+    \item $T = $ temperatura (K)
+\end{itemize}
+
+\begin{equation}
+    P_{total} = P_{seco} + e
+\end{equation}
+
+\begin{equation}
+    P_{seco} = \rho_d \cdot R_d \cdot T
+\end{equation}
+
+Donde: 
+\begin{itemize}
+    \item $\rho_d$ es la densidad del aire seco (gr/m³)
+    \item $R_d$ es la constante de los gases para aire seco = 287 (J/kg K)
+\end{itemize}
+
+\begin{equation}
+    P_{total} = \rho_d \cdot R_d \cdot T + \rho_v \cdot R_v \cdot T \quad ; \quad R_v = \frac{R_d}{0.622}
+\end{equation}
+    
+\begin{equation}
+    P_{total} = \rho_d \cdot R_d \cdot T + \rho_v \cdot \left(\frac{R_d}{0.622}\right) \cdot T
+\end{equation}
+    
+\begin{equation}
+    P_{total} = \left(\rho_d + \frac{\rho_v}{0.622}\right) \cdot R_d \cdot T
+\end{equation}
+
+Humedad específica: 
+\begin{equation}
+    q_v = 0,622 \cdot \frac{e}{P}
+\end{equation}
+
+\begin{equation}
+    R_a = R_d \cdot \left(1 + 0.608 \cdot q_v \right)
+\end{equation}
+
+Para una temperatura del aire dada, el contenido máximo de humedad que el aire puede contener corresponde a la presión de vapor de saturación (\(e_s\)), que se puede calcular con una ecuación específica.
+
+\begin{equation}
+    e_s = 611 \cdot \exp\left(\frac{17.27 \cdot T}{237.3 + T}\right)
+\end{equation}
+
+Humedad relativa:
+\begin{equation}
+    R_h = \frac{e}{e_s}
+\end{equation}
+
+Temperatura de punto de rocío (\(T_d\)): es la temperatura a la que se debe enfriar una masa de aire húmedo para que se sature, manteniendo la misma presión y contenido de agua.
+\\\\
+Punto de rocío: temperatura a la que habría que enfriar el aire, manteniendo constante la presión de vapor, para que se sature. En este punto se cumple:
+
+\begin{equation}
+    e = e_s \cdot T_R
+\end{equation}
+
+\section{Humedad Atmosférica}
+
+
+
+
+
+
 
 
