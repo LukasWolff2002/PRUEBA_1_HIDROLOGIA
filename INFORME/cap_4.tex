@@ -189,3 +189,38 @@ Donde los parametros se estiman en base a la muestra aplicando log a las variabl
     \mu_y = \bar{y} = \frac{1}{N} \sum_{i=1}^{N} \ln(x_i)
 \end{equation}
 
+Luego:
+
+\begin{equation}
+    Z = \frac{y - \bar{y}}{S_y}
+\end{equation}
+
+\subsection{Distribuciones de Valores Extremos}
+
+Generalmente en hidrologia se utilizan series de valores maximos y minimos, en un gran conjunto de datos. De esta forma:
+
+\begin{equation}
+    F(x) = exp(-(1-k \cdot \frac{x-\mu}{\alpha})^{\frac{1}{k}})
+\end{equation}
+
+Existen 3 tipos de distribuciones extremas:
+
+\begin{itemize}
+    \item Tipo I: Gumbel (k = 0)
+    \item Tipo II: Frechet (k < 0)
+    \item Tipo III: Weibull (k > 0)
+\end{itemize}
+
+\subsubsection{Distribucion Gumbel o Valor Extremo Tipo I}
+
+Se utiiza para series de valores extremos anuales, ver \textbf{Ayudantia 2} para mas detalles.
+\\ \\
+Los valores a utilizar son los siguientes:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagenes/tabla_valores_gumbell.jpg}
+    \label{fig:gumbel}
+\end{figure}
+
+\subsubsection{Distribucion Pearson III}
