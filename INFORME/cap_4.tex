@@ -73,3 +73,117 @@ Lo cual se define como \textbf{Seguridad Hidrologica}, donde su complemento es e
     R = 1- S = 1 - (1 - \frac{1}{T})^n
 \end{eqnarray}
 
+\section{Distribuciones Discretas}
+
+\subsection{Bernoulli}
+
+Una variable aleatoria posee dos estados, exito o fracaso, por lo tanto puede ser 1 o 0. Por lo tanto:
+
+\begin{equation}
+    P(X = 1) = p
+\end{equation}
+
+\begin{equation}
+    P(X = 0) = 1 - p
+\end{equation}
+
+\subsection{Distribucion Binomial}
+
+Este modelo surge a partir de la realizacion de n ensayos independientes tipo bernoulli, donde se define una variable aleatorioa k como el numero de exitos que ocurren en n ensayos, por lo tanto:
+
+\begin{equation}
+    P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}
+\end{equation}
+
+Donde:
+
+\begin{equation}
+    \binom{n}{k} = \frac{n!}{k!(n-k)!}
+\end{equation}
+
+Y K es el numero de evnetos exitosos.
+\\ \\
+Cada evento climatologico es independiente, por lo tanto es un ensayo tipo bernoulli, y su conjunto se representa binomialmente
+
+\section{Parametros Estadisticos}
+
+\subsection{Varianza}
+
+Se denomina a la varianza \textbf{$s^2$} como la media de los cuadrados de las diferencias entre cada valor y la media, por lo tanto:
+\\ \\
+Caso discreto: 
+
+\begin{equation}
+    s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}
+\end{equation}
+
+Caso continuo:
+
+\begin{equation}
+    \sigma^2 = E((x-\mu)^2)
+\end{equation}
+
+\subsection{Desviacion Estandar}
+
+Se define como la raiz cuadrada de la varianza, por lo tanto:
+
+\begin{equation}
+    s = \sqrt{s^2}
+\end{equation}
+
+\subsection{Coeficiente de Variacion}
+
+Se define como la relacion entre la desviacion estandar y la media, por lo tanto:
+
+\begin{equation}
+    CV = \frac{s}{\bar{x}}
+\end{equation}
+
+\subsection{Coeficiente de Asimetria}
+
+Se define como la medida de asimetria de una distribucion, por lo tanto:
+
+\begin{equation}
+    \gamma = \frac{E((x-\mu)^3)}{\sigma^3}
+\end{equation}
+
+\section{Distribuciones Continuas}
+
+\subsection{Distribucion Normal}
+
+Se define como:
+
+\begin{equation}
+    f(x) = \frac{1}{\sigma\sqrt{2\pi}} \cdot e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\end{equation}
+
+Donde $\mu$ es la media y $\sigma$ la desviacion estandar.
+\\ \\
+Esta funcion no es integrable, por lo tanto para evaluar la funcion se utilizan tablas y o formulas aproximadas.
+\\ \\
+\textbf{El proceso de normalizacion consiste en reemplazar la variable original por una nueva variable estandarizada (z) }
+
+\begin{equation}
+    z = \frac{x-\mu}{\sigma}
+\end{equation}
+
+De esta forma se obtiene:
+
+\begin{equation}
+    f(x) = \frac{1}{\sqrt{2\pi}} \cdot e^{-\frac{z^2}{2}}
+\end{equation}
+
+\subsection{Distribucion Log Normal}
+
+Es una transformacion de la distribucion Normal, donde se modela de una forma asimetrica con respecto a un valor medio, por ejemplo para precipitaciones o caudales:
+
+\begin{equation}
+    f(x) = \frac{1}{\sigma_y\sqrt{2\pi}} \cdot e^{\frac{1}{2}(\frac{y-\mu_y}{\sigma_y})^2}
+\end{equation}
+
+Donde los parametros se estiman en base a la muestra aplicando log a las variables observadas:
+
+\begin{equation}
+    \mu_y = \bar{y} = \frac{1}{N} \sum_{i=1}^{N} \ln(x_i)
+\end{equation}
+
