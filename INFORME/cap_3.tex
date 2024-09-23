@@ -338,10 +338,81 @@ Punto de rocío: temperatura a la que habría que enfriar el aire, manteniendo c
 
 \section{Humedad Atmosférica}
 
+Cantidad de vapor de agua presente en la atmósfera. Genera las presipitaciones. Proviene de la evaporación y evotranspiración, además, es variable temporal y espacialmente.
+\\\\
+La cantidad de vapor de agua presente depende de la temperatura del aire. Es capaz de cuantificar la humedad atm, lo cual permite estimar las presipitaciones y la evaporación potencial.
+\\\\
+Se puede medir con:
+\begin{itemize}
+    \item Psicrómetro: se basa en un balance calórico utilizando dos termómetros.
+    \begin{equation}
+        C_p (T - T_w) = L_v (\omega_w - \omega)
+        \end{equation}
+    \begin{itemize}
+            \item $C_p$: Calor específico del aire a presión constante
+            \item $L_v$: Calor latente de vaporización
+    \end{itemize}
+    \item Higrómetro
+    \item Higristores
+\end{itemize}
 
+Agua precipitable:
 
+\begin{equation}
+    m_p = \int_{z_1}^{z_2} q_v \rho_a A \, dz
+\end{equation}
+    
+\begin{equation}
+    \Delta m_p = \bar{q}_v \bar{\rho}_a A \Delta z
+\end{equation}
 
+\begin{equation}
+    q_v = 0,622 \cdot \frac{e}{P}
+\end{equation}
 
+\begin{equation}
+    \rho_a = \frac{P}{R_a \cdot T}
+\end{equation}
 
+\begin{equation}
+    P_2 = P_1 \cdot \left(\frac{T_2}{T_1}\right)^{\frac{g}{\alpha \cdot R_a}}
+\end{equation}
 
+\begin{equation}
+    T_2 = T_1 - \alpha \cdot (Z_2 - Z_1)
+\end{equation}
+
+Si $\alpha = 6,5$ y $R_a = 287$, entonces $\frac{g}{\alpha \cdot R_a} = 5,26$
+
+\section{Elementos de clasificación climática}
+
+Variables físicas que caracterizan a una zona.
+\begin{itemize}
+    \item Temperatura
+    \item Precipitación
+    \item Presión atmosférica
+    \item Distribución de presiones 
+    \item Vientos
+    \item Radiación solar
+\end{itemize}
+
+\section{Clasificación Climática}
+Conocer el clima de una zona es crucial en un estudio hidrológico, ya que permite anticipar el comportamiento de obras relacionadas con fenómenos hidrológicos. Esto incluye aspectos como la cantidad y distribución de lluvia, los mecanismos que generan precipitación y la frecuencia de tormentas a lo largo del año.
+
+\subsection{Climograma}
+Es un gráfico que muestra los valores medios mensuales de dos variables climáticas, como temperatura y precipitación, que representan las principales características del clima de una localidad.
+
+\subsubsection{Clima en Chile}
+
+Chile, con su geografía que se extiende entre los 17º y 56º de latitud sur, presenta una gran variedad de climas debido a la longitud de su territorio y su pequeña anchura. Los climas principales son:
+
+\begin{itemize}
+    \item \textbf{Desértico:} Norte Grande, al norte de los 26º S, es muy seco, con casi nulas precipitaciones, salvo en la alta cordillera.
+    \item \textbf{Semi-desértico:} Norte Chico, entre los 26º y 31º S, con algunas precipitaciones invernales ocasionales.
+    \item \textbf{Mediterráneo:} Centro-sur del país, entre los 31º y 38º S, con veranos secos y cálidos, e inviernos lluviosos.
+    \item \textbf{Lluvioso:} Región al sur del paralelo 38º S, donde llueve casi todo el año.
+\end{itemize}
+
+\subsubsection{Presipitaciones en Chile}
+En general, las lluvias aumentan con la latitud, siendo casi nulas en la primera y segunda región y considerables en la zona sur. Por ejemplo, Tocopilla recibe 3 mm de lluvia anual, Antofagasta 11 mm y Valdivia 2.470 mm. También hay variaciones en las precipitaciones de oeste a este. La Cordillera de la Costa causa precipitaciones en su vertiente occidental y una disminución en la oriental. La Cordillera de los Andes provoca un nuevo ascenso del aire, aumentando las precipitaciones y generando un clima de nieve en las zonas altas.
 
