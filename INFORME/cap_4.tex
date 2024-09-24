@@ -189,3 +189,56 @@ Donde los parametros se estiman en base a la muestra aplicando log a las variabl
     \mu_y = \bar{y} = \frac{1}{N} \sum_{i=1}^{N} \ln(x_i)
 \end{equation}
 
+\subsection{Distribución de Valores Extremos}
+
+Los datos en hidrología suelen ser series de valores extremos o excedencias anuales (máximos o mínimos).
+
+Distribución de Valor Extremo General (DVEG):
+
+\begin{equation}
+    F(x) = \exp \left\{ - \left[ 1 - \kappa \left( \frac{x - u}{\alpha} \right) \right]^{1/\kappa} \right\}
+\end{equation}
+
+Existen 3 tipos de distribuciones extremas:
+
+\begin{enumerate}
+    \item Gumbel: $\kappa = 0$ en DVEG
+    \begin{equation}
+        F(x) = \exp\left[-\exp\left(-\frac{x-u}{\alpha}\right)\right]
+    \end{equation}
+        
+    \begin{equation}
+        \alpha = \frac{\sqrt{6} \cdot \sigma}{\pi}
+        \quad \text{y} \quad
+        u = \bar{x} - 0.5722 \cdot \alpha
+    \end{equation}
+
+    Variable reducida:
+
+    \begin{equation}
+        y = \frac{x-u}{\alpha}
+    \end{equation}
+
+    Finalmente:
+
+    \begin{equation}
+        y_T = -\ln(-\ln\left(\frac{T-1}{T}\right))
+    \end{equation}
+
+    \begin{equation}
+        x_T = u + \alpha \cdot Y_T
+        \quad \text{;} \quad
+        Y_T \rightarrow y = \frac{x-u}{\alpha} 
+    \end{equation}
+
+    Esta expresión permite calcular el valor asociado a un evento de periodo de retorno T, en función del promedio, desv. estándar y T.
+
+    \item Fretcher: $\kappa < 0$
+    \item Weibull: $\kappa > 0$
+\end{enumerate}
+
+
+
+
+
+
