@@ -75,6 +75,12 @@ Lo cual se define como \textbf{Seguridad Hidrologica}, donde su complemento es e
 
 \textbf{Nota: aproximar el valor de t a un valor multiplo de 5}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{imagenes/Qmi.png}
+    \label{fig:Qmi}
+\end{figure}
+
 \section{Distribuciones Discretas}
 
 \subsection{Bernoulli}
@@ -232,13 +238,175 @@ Existen 3 tipos de distribuciones extremas:
     \end{equation}
 
     Esta expresión permite calcular el valor asociado a un evento de periodo de retorno T, en función del promedio, desv. estándar y T.
+    \\\\
+    Si la muestra es de tamaño finito, se debe corregir el valor de $\alpha$ y $u$:
+
+    \begin{equation}
+        \alpha = \frac{\sigma_x}{\sigma_n}
+    \end{equation}
+
+    \begin{equation}
+        u = \bar{x} - \sigma_x \cdot \frac{y_n}{\sigma_n}
+    \end{equation}
+
+    Los valores de $\sigma_n$ y $y_n$ se obtienen de tablas.
 
     \item Fretcher: $\kappa < 0$
     \item Weibull: $\kappa > 0$
 \end{enumerate}
 
+\subsection{Distribución Pearson III}
 
+\begin{equation}
+    f(x) = \frac{1}{\alpha \cdot \Gamma(\beta)} \left[\frac{x - \gamma}{\alpha}\right]^{\beta - 1} \cdot \exp\left[-\frac{x - \gamma}{\alpha}\right]
+\end{equation}
+    
+\begin{equation}
+    \alpha = \frac{\sigma}{\sqrt{\beta}}
+\end{equation}
+    
+\begin{equation}
+    \beta = \left(\frac{2}{C_s}\right)^2
+\end{equation}
+    
+\begin{equation}
+    \gamma = \mu - \sigma \cdot \sqrt{\beta}
+\end{equation}
+    
+\section{Análisis de Frecuencia}
 
+\subsection{Periodo de Retorno (T)}
 
+Cálculo o estimación de eventos extremos requiere que la función de pbb F(x) sea invertible. El análisis de frecuencia ayuda a determinar un x sin una función invertible.
+\\\\
+Periodo de retorno de un evento(T): Intervalo de recurrencia promedio entre eventos que igualan o exceden una magnitud especificada.
 
+\begin{equation}
+    P = 1/T
+\end{equation}
+
+Donde P es la pbb de ocurrencia del evento.
+\\\\
+
+Los datos deben discretizarse para su análisis, donde con el total se pueden formar:
+\begin{itemize}
+    \item Series de duración completa
+    \item Series de duración parcial
+    \item Series de valores extremos
+    \item Series de excedencias: Se define umbral de la variable analizada para obtener una serie con los N mayores valores.
+    \item Serie de máximos: Se selecciona el máximo valor de cada año.
+\end{itemize}
+
+El objetivo del análisis de frecuencia es definir la distribución de mejor ajuste.
+\\\\
+Si se tienen registros fluviométricos, se puede construir la serie de caudales máximos.
+\begin{equation}
+    X_T = \mu + K_T \cdot \sigma
+\end{equation}
+
+Donde:
+\begin{itemize}
+    \item $X_T$: Valor asociado al periodo de retorno T
+    \item $\mu$: Media de la serie
+    \item $\sigma$: Desviación estándar de la serie
+    \item $K_T$: Coeficiente de frecuencia (depende de distribución seleccionada y T) 
+\end{itemize}
+
+\subsubsection{Método del factor de frecuencia (Kt)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{imagenes/kt_norm.png}
+    \label{fig:kt_norm}
+\end{figure}
+
+Para el caso de log normal, es válido el mismo $K_T$ pero se ajusta a la serie $\log{(x)}$ y $\ln{(x)}$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{imagenes/kt_2.png}
+    \label{fig:kt_2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.1\textwidth]{imagenes/lista_kt.png}
+    \label{fig:kt_3}
+\end{figure}
+
+Distribución Gumbel:
+
+\begin{equation}
+    K_T = \frac{Y_T-Y_n}{\sigma_n}
+\end{equation}
+
+\begin{equation}
+    Y_T = -\ln\left(-\ln\left(\frac{T-1}{T}\right)\right)
+\end{equation}
+
+\subsubsection{Selección de la distribución que mejor ajusta}
+
+\begin{enumerate}
+    \item Métodos empíricos: Gráficos
+    \item Métodos estadísticos: Test Chi-Cuadrado
+\end{enumerate}
+
+Se debe elegir la función de densidad de frecuencia que mejor represente la forma del histograma normalizado de la muestra.
+\\\\
+Método de Weibull:
+
+\begin{enumerate}
+    \item Se tienen datos estimados
+    \item Se ordenam las observaciones en orden creciente o decreciente.
+    \item A las observaciones se les asigna una probabilidad acumulada.
+    \begin{equation}
+        P(x>X) = \frac{m}{n+1} \text{, Para datos ordenados de mayor a menor}
+    \end{equation}
+    \item Graficar valores obtenidos Q vs Kt $\rightarrow$ Xt es caudal.
+    \item Si los puntos siguen tendencia lineal, se acepta modelo.
+\end{enumerate}
+
+Error estandar:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{imagenes/error_estandar.png}
+    \label{fig:error_estandar}
+\end{figure}
+
+También estan los siguientes métodos:
+
+\begin{itemize}
+    \item Chi-Cuadrado
+    \item Límites de confianza
+\end{itemize}
+
+¿Es correcto realizar un análisis de frecuencia a cualquier tipo de serie?
+
+\begin{itemize}
+    \item Las series de tiempo deben ser estacionarias. Estas son afectadas por:
+    \begin{itemize}
+        \item Factores climáticos
+        \item Modificaciones a infraestructura
+        \item Cambios en respuesta hidrológica de las cuencas
+    \end{itemize}
+    Se determina si es estacionaria con:
+    \begin{itemize}
+        \item Test de Mann-Kendall
+        \item Test de Pettitt
+    \end{itemize}
+
+    \item Cambio climático $\rightarrow$ Serie no estacionaria.
+    \begin{itemize}
+        \item Se puede remover la tendencia a la serie, realizar AF y luego incorporar la tendencia.
+        \item Se puede considerar serie cuasi-estacionaria de 30 años.
+    \end{itemize}
+
+    \item Si hacen falta datos se puede:
+    \begin{itemize}
+        \item Interpolar
+        \item Regresión lineal
+        \item Análisis de sequías o crecidas 
+    \end{itemize}
+\end{itemize}
 
